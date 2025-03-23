@@ -1,0 +1,194 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  height: 100%;
+}
+
+/* Wrapper to center content */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  padding: 20px; /* Add padding for smaller screens */
+}
+
+/* Container */
+.container {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Limit maximum width */
+}
+
+/* Heading */
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Paragraph */
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Input Field */
+input[type="password"],
+input[type="text"] {
+  width: calc(100% - 24px); /* Full width minus padding */
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+  margin-bottom: 10px; /* Add spacing below input */
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #3700b3;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff0266;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Form Styling */
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Password field container */
+.password-field {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Password input */
+#passwordInput {
+  width: 100%;
+  padding: 12px 40px 12px 12px; /* Add padding for the icon */
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Field icon (eye icon) */
+.field-icon {
+  position: absolute;
+  top: 45%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Eye icon styles */
+.eye-icon {
+  width: 24px;
+  height: 24px;
+  color: #ccc; /* Light gray for visibility */
+  transition: color 0.3s ease;
+}
+
+/* Eye open state (default) */
+.eye-open,
+.eye-pupil {
+  transition: opacity 0.3s ease;
+}
+
+/* Slash effect (hidden by default) */
+.eye-slash {
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When checkbox is checked (slash through the eye) */
+.password-toggle-checkbox:checked + .password-toggle-label .eye-slash {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.password-toggle-checkbox:checked + .password-toggle-label .eye-open,
+.password-toggle-checkbox:checked + .password-toggle-label .eye-pupil {
+  opacity: 0.3; /* Fade the eye slightly when slashed */
+}
+
+/* Hover effect */
+.password-toggle-label:hover .eye-icon {
+  color: #007bff; /* Change icon color on hover */
+}
+
+/* Hide the actual checkbox */
+.password-toggle-checkbox {
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 22px; /* Smaller heading for tablets */
+  }
+
+  p {
+    font-size: 14px; /* Smaller paragraph for tablets */
+  }
+
+  input[type="password"],
+  input[type="text"] {
+    padding: 10px; /* Smaller padding for input */
+  }
+
+  button {
+    padding: 10px; /* Smaller padding for button */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px; /* Smaller heading for mobile */
+  }
+
+  p {
+    font-size: 13px; /* Smaller paragraph for mobile */
+  }
+
+  input[type="password"],
+  input[type="text"] {
+    font-size: 14px; /* Smaller font size for input */
+  }
+
+  button {
+    font-size: 14px; /* Smaller font size for button */
+  }
+}
